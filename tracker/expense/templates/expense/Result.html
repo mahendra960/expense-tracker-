@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Results</title>
+    <link rel="stylesheet" href="/static/expense/Result.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Expense Results</h2>
+
+        <!-- 🔍 Search Form -->
+        <form method="POST" action="{% url 'expense:results' %}" class="search-box">
+            {% csrf_token %}
+            <input type="month" name="month" value="{{ request.GET.month }}">
+            <input type="text" name="category" placeholder="Search category" value="{{ request.GET.category }}">
+            <button type="submit">Search</button>
+
+        </form>
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount (₹)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for expense in expenses %}
+                <tr>
+                    <td>
+                        <span class="category
+                        {% if request.GET.category and request.GET.category|lower in expense.category|lower %}
+                            highlight
+                        {% endif %}
+                        ">
+                            {{ expense.category }}
+                        </span>
+                    </td>
+                    <td class="amount">₹ {{ expense.amount }}</td>
+                    <td>{{ expense.date }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="no-data">No data available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Home Button -->
+        <div class="btn-box">
+            <a href="" class="home-btn">🏠 Go to Expense Form </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

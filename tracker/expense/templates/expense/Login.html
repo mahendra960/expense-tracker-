@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login form</title>
+    <link rel="stylesheet" href="/static/expense/register.css">
+</head>
+<body>
+    <div class="form-container">
+        <form action="{% url 'expense:Login_page' %}" method="POST">
+            {% csrf_token %}
+            <h2>Create Account</h2>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">LOGIN</button>
+
+
+        </form>
+    </div>
+</body>
+</html>

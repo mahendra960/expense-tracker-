@@ -6,6 +6,9 @@ from django.shortcuts import render, redirect
 
 from .models import User, Expense
 
+def home(request):
+    return redirect('Register')
+
 
 def Register(request):
     return render(request, 'expense/register.html')

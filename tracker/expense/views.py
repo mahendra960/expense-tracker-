@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from .models import User, Expense
 
 def home(request):
-    return redirect('register')
+    return redirect('/expense/register/')
 
 
 def Register(request):

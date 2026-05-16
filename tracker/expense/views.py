@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from .models import User, Expense
 
 def home(request):
-    return redirect('Register')
+    return redirect('register')
 
 
 def Register(request):

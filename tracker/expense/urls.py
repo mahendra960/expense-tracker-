@@ -13,5 +13,6 @@ urlpatterns = [
     path('result/', views.Result_page, name='Result'),
     path('form/', views.Add_details, name='expense_form'),
     path('results/', views.Results, name='results'),
-path('', lambda request: redirect('expense/')),
+
+path('', views.home, name='home'),
 ]

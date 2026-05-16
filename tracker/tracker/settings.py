@@ -100,9 +100,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'your_local_db_name',      # ← your local db name
-            'USER': 'postgres',                 # ← your postgres username
-            'PASSWORD': 'your_local_password',  # ← your postgres password
+            'NAME': os.getenv('DATABASE_NAME'),      # ← your local db name
+            'USER': os.getenv('DATABASE_USER'),                 # ← your postgres username
+            'PASSWORD': os.getenv('DATABASE_PASSWORD'),  # ← your postgres password
             'HOST': 'localhost',
             'PORT': '5432',
         }

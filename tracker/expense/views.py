@@ -11,7 +11,7 @@ def home(request):
 
 
 def Register(request):
-    return render(request, 'expense/register.html')
+    return render(request, 'expense/Register.html')
 
 def Registration(request):
     if request.method == 'POST':

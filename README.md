@@ -18,7 +18,7 @@ A Django web application to track and manage personal expenses with secure user 
 
 *** Getting Started
 
-git clone https://github.com/mahendra960/expense-tracker.git
+git clone https://github.com/mahendra960/expense-tracker-
 cd expense-tracker
 python -m venv venv
 source venv/bin/activate
